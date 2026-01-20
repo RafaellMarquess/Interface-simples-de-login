@@ -38,22 +38,12 @@ def clique():
         messagebox.showerror("Atenção", "Por favor, preencha todos os campos!")
     else:
         messagebox.showinfo("Sucesso", f"Login: {usuario}\nCargo: {cargo} \nRedirecionado...")
-        abrir_dashboard(usuario) # <--- Aqui a mágica acontece
+        abrir_dashboard(usuario)
 
 def sair():
     resposta = messagebox.askyesno("Sair", "Deseja realmente fechar o Gestor Online?")
     if resposta:
         janela.destroy()
-
-def abrir_ajuda():
-    # Cria uma nova janela independente
-    janela_ajuda = tk.Toplevel(janela)
-    janela_ajuda.title("Ajuda do Sistema")
-    janela_ajuda.geometry("300x200")
-    
-    # Você pode colocar qualquer coisa nela, como se fosse a principal
-    tk.Label(janela_ajuda, text="Para suporte, contate o admin.").pack(pady=20)
-    tk.Button(janela_ajuda, text="Fechar", command=janela_ajuda.destroy).pack()
 
 def abrir_dashboard(usuario_logado):
     # Destrói o frame de login com tudo o que tem dentro
@@ -88,6 +78,8 @@ botao_sair = tk.Button(frame_login, text="Sair", bg="red", fg="white", command=s
 botao_sair.grid(row=4, column=1, pady=10)
 
 janela.mainloop()
+
+#Tudo abaixo dessa linha foi apenas eu testando.
 
 #input
 #caixa_texto = tk.Entry(janela)
